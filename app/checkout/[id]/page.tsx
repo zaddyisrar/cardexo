@@ -9,26 +9,26 @@ export default function CheckoutPage() {
   const params = useParams<{ id: string }>();
   const router = useRouter();
 
-  const card = cards.find((item) => item.id === params.id);
-
   const [walletId, setWalletId] = useState("");
+
+  const card = cards.find((item) => item.id === params.id);
 
   if (!card) {
     return (
-      <main className="min-h-screen bg-[#050505] text-white flex items-center justify-center">
+      <main className="flex min-h-screen items-center justify-center bg-[#050505] text-white">
         Card not found.
       </main>
     );
   }
 
-  function handleContinue() {
+  const handleContinue = () => {
     if (!walletId.trim()) {
       alert("Enter wallet ID");
       return;
     }
 
     router.push(`/processing/${card.id}`);
-  }
+  };
 
   return (
     <main className="min-h-screen bg-[#050505] text-white">
@@ -59,13 +59,14 @@ export default function CheckoutPage() {
             <div className="flex items-center justify-between border-b border-white/10 pb-5">
               <div>
                 <p className="font-medium">{card.name}</p>
+
                 <p className="mt-1 text-sm text-white/40">
                   {card.category}
                 </p>
               </div>
 
               <p className="text-xl font-semibold">
-                ${card.price}
+                ${card.price.toLocaleString()}
               </p>
             </div>
 
@@ -86,7 +87,7 @@ export default function CheckoutPage() {
               onClick={handleContinue}
               className="mt-6 w-full rounded-xl bg-white px-6 py-4 font-medium text-black transition hover:bg-white/90"
             >
-              Pay ${card.price}
+              Pay ${card.price.toLocaleString()}
             </button>
           </div>
         </section>
