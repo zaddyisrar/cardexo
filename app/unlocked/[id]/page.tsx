@@ -99,7 +99,7 @@ export default function UnlockedPage() {
                   </p>
 
                   <h1 className="mt-2 text-4xl font-semibold">
-                    ${card.worth.toLocaleString()}
+                    ${card.minValue.toLocaleString()} - ${card.maxValue.toLocaleString()}
                   </h1>
                 </div>
 
@@ -173,7 +173,7 @@ export default function UnlockedPage() {
                 </p>
 
                 <p className="mt-2 text-2xl font-semibold">
-                  ${card.worth.toLocaleString()}
+                  ${card.minValue.toLocaleString()} - ${card.maxValue.toLocaleString()}
                 </p>
               </div>
 

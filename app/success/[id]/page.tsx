@@ -44,14 +44,14 @@ export default function SuccessPage() {
             </div>
 
             <div className="mt-4 flex items-center justify-between">
-              <span className="text-sm text-white/40">
-                Expected Card Value
-              </span>
+  <span className="text-sm text-white/40">
+    Amount
+  </span>
 
-              <span className="font-medium">
-                ${card.worth.toLocaleString()}
-              </span>
-            </div>
+  <span className="font-medium">
+    $0
+  </span>
+</div>
 
             <div className="mt-4 flex items-center justify-between">
               <span className="text-sm text-white/40">Status</span>

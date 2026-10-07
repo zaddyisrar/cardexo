@@ -78,7 +78,7 @@ export default async function CardDetailsPage({ params }: Props) {
               <div className="rounded-2xl border border-white/10 p-5">
                 <p className="text-sm text-white/40">Worth</p>
                 <p className="mt-2 text-2xl font-semibold">
-                  ${card.worth.toLocaleString()}
+                  ${card.minValue.toLocaleString()} - ${card.maxValue.toLocaleString()}
                 </p>
               </div>
             </div>

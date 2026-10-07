@@ -38,7 +38,7 @@ export default function Home() {
 
                 <div>${card.price}</div>
 
-                <div>${card.worth.toLocaleString()}</div>
+                <div>${card.minValue.toLocaleString()} - ${card.maxValue.toLocaleString()}</div>
 
                 <Link
                   href={`/card/${card.id}`}
