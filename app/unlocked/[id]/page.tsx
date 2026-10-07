@@ -57,10 +57,17 @@ export default function UnlockedPage() {
 
   const details = cardDetails[card.id];
 
+  if (!details) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-[#050505] text-white">
+        Card details not found.
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-[#050505] text-white">
       <div className="mx-auto max-w-5xl px-6 py-8">
-
         <header className="flex items-center justify-between border-b border-white/10 pb-6">
           <Link
             href="/"
@@ -78,13 +85,10 @@ export default function UnlockedPage() {
         </header>
 
         <section className="grid gap-10 py-16 md:grid-cols-2">
-
           {/* CARD */}
           <div>
             <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-
               <div className="rounded-3xl border border-white/15 bg-[#111111] p-8">
-
                 <div className="flex items-center justify-between">
                   <p className="text-sm tracking-[0.2em] text-white/40">
                     CARDEXO
@@ -99,7 +103,7 @@ export default function UnlockedPage() {
                   </p>
 
                   <h1 className="mt-2 text-4xl font-semibold">
-                    ${card.minValue.toLocaleString()} - ${card.maxValue.toLocaleString()}
+                    $0
                   </h1>
                 </div>
 
@@ -114,7 +118,6 @@ export default function UnlockedPage() {
                 </div>
 
                 <div className="mt-8 flex items-end justify-between">
-
                   <div>
                     <p className="text-xs text-white/30">
                       CARD HOLDER
@@ -144,7 +147,6 @@ export default function UnlockedPage() {
                       {details.cvv}
                     </p>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -152,7 +154,6 @@ export default function UnlockedPage() {
 
           {/* DETAILS */}
           <div className="flex flex-col justify-center">
-
             <p className="text-sm uppercase tracking-[0.25em] text-white/40">
               Card Active
             </p>
@@ -166,14 +167,13 @@ export default function UnlockedPage() {
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4">
-
               <div className="rounded-2xl border border-white/10 p-5">
                 <p className="text-sm text-white/40">
                   Available Value
                 </p>
 
                 <p className="mt-2 text-2xl font-semibold">
-                  ${card.minValue.toLocaleString()} - ${card.maxValue.toLocaleString()}
+                  $0
                 </p>
               </div>
 
@@ -186,17 +186,14 @@ export default function UnlockedPage() {
                   Active
                 </p>
               </div>
-
             </div>
 
             <div className="mt-8 rounded-2xl border border-white/10 p-6">
-
               <p className="font-medium">
                 Card Information
               </p>
 
               <div className="mt-6 space-y-5">
-
                 <div className="flex justify-between gap-6">
                   <span className="text-sm text-white/40">
                     Card Number
@@ -226,7 +223,6 @@ export default function UnlockedPage() {
                     {details.cvv}
                   </span>
                 </div>
-
               </div>
             </div>
 
@@ -236,7 +232,6 @@ export default function UnlockedPage() {
             >
               Browse More Cards
             </Link>
-
           </div>
         </section>
       </div>
